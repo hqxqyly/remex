@@ -1,0 +1,10 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.crude.org.aop.CrudeOrgControllerAop,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.DepartmentPreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.RolePreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.UserSafePreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.UserPreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.AuthPreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.CompanyPreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.AreaPreinstallController,\
+com.github.hqxqyly.remex.crude.org.controller.preinstall.AreaCodePreinstallController

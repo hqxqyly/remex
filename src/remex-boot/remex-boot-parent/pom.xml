@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.hqxqyly.remex.boot</groupId>
+    <artifactId>remex-boot-dependencies</artifactId>
+    <version>1.0.0-RELEASE</version>
+    <relativePath>../remex-boot-dependencies</relativePath>
+  </parent>
+  
+  <artifactId>remex-boot-parent</artifactId>
+  <packaging>pom</packaging>
+  
+  <modules>
+    <module>remex-boot-core</module>
+    <module>remex-boot-velocity</module>
+    <module>remex-boot-redis</module>
+    <module>remex-boot-guava</module>
+    <module>remex-boot-ehcache</module>
+    <module>remex-boot-db</module>
+    <module>remex-boot-mybatis</module>
+    <module>remex-boot-pagehelper</module>
+    <module>remex-boot-logging</module>
+    <module>remex-boot-ftp</module>
+    <module>remex-boot-filelocal</module>
+    <module>remex-boot-io</module>
+    <module>remex-boot-mybatis-plus</module>
+    <module>remex-boot-web</module>
+    <module>remex-boot-validator</module>
+    <module>remex-boot-cache-parent</module>
+    <module>remex-boot-fileserver-parent</module>
+    <module>remex-boot-swagger-parent</module>
+    <module>remex-boot-shiro-parent</module>
+    <module>remex-boot-auth</module>
+    <module>remex-boot-thumbnailator</module>
+    <module>remex-boot-seata-parent</module>
+  	<module>remex-boot-poi</module>
+  	<module>remex-boot-sequence-parent</module>
+  	<module>remex-boot-remon-parent</module>
+    <module>remex-boot-rocketmq-parent</module>
+  </modules>
+</project>

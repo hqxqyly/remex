@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.boot.mybatis.plus.config.RemexMybatisPlusAutoConfiguration,\
+com.github.hqxqyly.remex.boot.mybatis.plus.config.RemexCustomMybatisPlusAutoConfiguration

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.cloud.projects.config.eureka.config.CloudConfigAutoConfiguration

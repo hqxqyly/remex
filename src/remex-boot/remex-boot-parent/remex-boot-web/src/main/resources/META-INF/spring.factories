@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.boot.web.config.RemexWebAutoConfiguration,\
+com.github.hqxqyly.remex.boot.web.config.RemexMultipartAutoConfiguration

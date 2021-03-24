@@ -1,0 +1,8 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.crude.activiti.controller.ActivitiGroupController,\
+com.github.hqxqyly.remex.crude.activiti.controller.ActivitiUserController,\
+com.github.hqxqyly.remex.crude.activiti.controller.ActivitiRepositoryController,\
+com.github.hqxqyly.remex.crude.activiti.controller.ActivitiTaskController,\
+com.github.hqxqyly.remex.crude.activiti.controller.ActivitiRecordController
+
+

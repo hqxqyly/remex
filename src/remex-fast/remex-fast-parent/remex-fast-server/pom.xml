@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.hqxqyly.remex.fast</groupId>
+    <artifactId>remex-fast-parent</artifactId>
+    <version>1.0.0-RELEASE</version>
+  </parent>
+  
+  <artifactId>remex-fast-server</artifactId>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>com.github.hqxqyly.remex.fast</groupId>
+		<artifactId>remex-fast-framework</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.github.hqxqyly.remex.fast</groupId>
+		<artifactId>remex-fast-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.github.hqxqyly.remex.fast</groupId>
+		<artifactId>remex-fast-mybatis-plus</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.github.hqxqyly.remex.boot</groupId>
+		<artifactId>remex-boot-pagehelper</artifactId>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-aop</artifactId>
+	</dependency>
+  </dependencies>
+</project>

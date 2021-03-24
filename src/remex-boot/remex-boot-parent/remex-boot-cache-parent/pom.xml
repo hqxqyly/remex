@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.github.hqxqyly.remex.boot</groupId>
+    <artifactId>remex-boot-parent</artifactId>
+    <version>1.0.0-RELEASE</version>
+  </parent>
+  <artifactId>remex-boot-cache-parent</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>remex-boot-cache-core</module>
+  	<module>remex-boot-cache-common</module>
+  	<module>remex-boot-cache-redis</module>
+  	<module>remex-boot-cache-guava</module>
+    <module>remex-boot-cache-ehcache</module>
+  </modules>
+</project>

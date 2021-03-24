@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.crude.fileserver.aop.FileServerControllerAop,\
+com.github.hqxqyly.remex.crude.fileserver.controller.FileServerController,\
+com.github.hqxqyly.remex.crude.fileserver.controller.FileServerThumbnailController

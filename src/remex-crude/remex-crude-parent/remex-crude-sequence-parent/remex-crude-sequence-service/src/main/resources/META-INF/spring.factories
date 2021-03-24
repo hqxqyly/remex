@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.crude.sequence.aop.CrudeSequenceControllerAop,\
+com.github.hqxqyly.remex.crude.sequence.controller.preinstall.SequencePreinstallController

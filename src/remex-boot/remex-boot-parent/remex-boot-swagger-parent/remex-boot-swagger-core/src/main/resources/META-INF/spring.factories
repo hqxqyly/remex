@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.boot.swagger.config.SwaggerAutoConfiguration,\
+com.github.hqxqyly.remex.boot.swagger.config.RemexApiModelPropertyPropertyBuilder

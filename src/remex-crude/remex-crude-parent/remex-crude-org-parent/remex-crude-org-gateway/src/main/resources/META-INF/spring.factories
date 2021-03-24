@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.github.hqxqyly.remex.crude.org.gateway.config.GatewayAutoConfiguration,\
+com.github.hqxqyly.remex.crude.org.gateway.config.preinstall.CrudePreinstallShiroRealm,\
+com.github.hqxqyly.remex.crude.org.gateway.aop.CrudeOrgGatewayControllerAop,\
+com.github.hqxqyly.remex.crude.org.gateway.controller.preinstall.SystemPreinstallController
