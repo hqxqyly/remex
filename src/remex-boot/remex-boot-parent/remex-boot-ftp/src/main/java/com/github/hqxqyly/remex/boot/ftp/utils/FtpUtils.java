@@ -2,9 +2,9 @@ package com.github.hqxqyly.remex.boot.ftp.utils;
 
 import org.apache.commons.net.ftp.FTPClient;
 
-import com.github.hqxqyly.remex.boot.fileserver.common.utils.FileServerOutUtils;
 import com.github.hqxqyly.remex.boot.ftp.client.FtpClient;
 import com.github.hqxqyly.remex.boot.utils.ApplicationContextUtils;
+import com.github.hqxqyly.remex.solution.fileserver.common.utils.FileServerOutUtils;
 
 /**
  * ftp工具类

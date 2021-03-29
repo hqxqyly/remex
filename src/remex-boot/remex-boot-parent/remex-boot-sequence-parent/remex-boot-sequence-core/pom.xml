@@ -17,7 +17,7 @@
 	</dependency>
 	<dependency>
 	    <groupId>com.github.hqxqyly.remex.boot</groupId>
-	    <artifactId>remex-boot-cache-core</artifactId>
+	    <artifactId>remex-solution-cache-core</artifactId>
 	</dependency>
   </dependencies>
 </project>

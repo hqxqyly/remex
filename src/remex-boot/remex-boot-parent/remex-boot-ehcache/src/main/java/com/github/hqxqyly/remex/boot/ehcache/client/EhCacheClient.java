@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
-import com.github.hqxqyly.remex.boot.cache.common.client.ICacheOutClient;
+import com.github.hqxqyly.remex.solution.cache.common.client.ICacheOutClient;
 
 /**
  * EhCache处理器

@@ -11,11 +11,11 @@ import org.apache.commons.net.ftp.FTPReply;
 
 import com.github.hqxqyly.remex.boot.constant.BConst;
 import com.github.hqxqyly.remex.boot.exception.io.RemexFileNotFoundException;
-import com.github.hqxqyly.remex.boot.fileserver.common.client.IFileServerOutClient;
 import com.github.hqxqyly.remex.boot.ftp.exception.RemexFtpConnectFailedException;
 import com.github.hqxqyly.remex.boot.ftp.exception.RemexFtpFailedException;
 import com.github.hqxqyly.remex.boot.utils.Assist;
 import com.github.hqxqyly.remex.boot.utils.FileUtils;
+import com.github.hqxqyly.remex.solution.fileserver.common.client.IFileServerOutClient;
 
 /**
  * ftp处理器

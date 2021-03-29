@@ -5,9 +5,9 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 import com.google.common.cache.Cache;
-import com.github.hqxqyly.remex.boot.cache.common.utils.CacheOutUtils;
 import com.github.hqxqyly.remex.boot.guava.client.GuavaClient;
 import com.github.hqxqyly.remex.boot.utils.ApplicationContextUtils;
+import com.github.hqxqyly.remex.solution.cache.common.utils.CacheOutUtils;
 
 /**
  * guava工具类

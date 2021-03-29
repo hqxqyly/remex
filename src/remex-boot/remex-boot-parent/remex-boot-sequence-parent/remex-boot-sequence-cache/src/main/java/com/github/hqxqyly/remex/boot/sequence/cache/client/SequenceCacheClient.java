@@ -2,10 +2,10 @@ package com.github.hqxqyly.remex.boot.sequence.cache.client;
 
 import java.sql.Timestamp;
 
-import com.github.hqxqyly.remex.boot.cache.utils.CacheUtils;
 import com.github.hqxqyly.remex.boot.sequence.bean.SequenceNextSeqDbBean;
 import com.github.hqxqyly.remex.boot.sequence.client.SequenceBaseClient;
 import com.github.hqxqyly.remex.boot.utils.Assist;
+import com.github.hqxqyly.remex.solution.cache.utils.CacheUtils;
 
 /**
  * 序列处理器 - 缓存

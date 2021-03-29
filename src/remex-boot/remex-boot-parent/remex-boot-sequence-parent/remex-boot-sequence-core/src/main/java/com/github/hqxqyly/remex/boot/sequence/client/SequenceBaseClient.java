@@ -3,12 +3,12 @@ package com.github.hqxqyly.remex.boot.sequence.client;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import com.github.hqxqyly.remex.boot.cache.utils.CacheUtils;
 import com.github.hqxqyly.remex.boot.constant.BConst;
 import com.github.hqxqyly.remex.boot.exception.RemexException;
 import com.github.hqxqyly.remex.boot.sequence.bean.SequenceNextSeqDbBean;
 import com.github.hqxqyly.remex.boot.utils.Assist;
 import com.github.hqxqyly.remex.boot.utils.DateUtils;
+import com.github.hqxqyly.remex.solution.cache.utils.CacheUtils;
 
 /**
  * 序列处理器

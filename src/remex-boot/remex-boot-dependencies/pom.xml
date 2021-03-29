@@ -106,51 +106,6 @@
 		</dependency>
 		<dependency>
 		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-cache-core</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-cache-common</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-cache-redis</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-cache-guava</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-cache-ehcache</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-fileserver-core</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-fileserver-ftp</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-fileserver-local</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
-		    <artifactId>remex-boot-fileserver-common</artifactId>
-		    <version>${project.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.github.hqxqyly.remex.boot</groupId>
 		    <artifactId>remex-boot-validator</artifactId>
 		    <version>${project.version}</version>
 		</dependency>
@@ -206,51 +161,6 @@
 	  	</dependency>
 	  	<dependency>
 	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-base-core</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-base-producer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-base-consumer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-cache-core</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-cache-producer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-cache-consumer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-rocketmq-core</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-rocketmq-producer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
-			<artifactId>remex-boot-remon-rocketmq-consumer</artifactId>
-			<version>${project.version}</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
 			<artifactId>remex-boot-rocketmq-core</artifactId>
 			<version>${project.version}</version>
 	  	</dependency>
@@ -262,6 +172,100 @@
 	  	<dependency>
 	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
 			<artifactId>remex-boot-rocketmq-consumer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	
+	  	
+	  	
+	  	
+	  	<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-cache-core</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-cache-common</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-cache-redis</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-cache-guava</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-cache-ehcache</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-fileserver-core</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-fileserver-ftp</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-fileserver-local</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.hqxqyly.remex.boot</groupId>
+		    <artifactId>remex-solution-fileserver-common</artifactId>
+		    <version>${project.version}</version>
+		</dependency>
+		<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-base-core</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-base-producer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-base-consumer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-cache-core</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-cache-producer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-cache-consumer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-rocketmq-core</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-rocketmq-producer</artifactId>
+			<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.boot</groupId>
+			<artifactId>remex-solution-remon-rocketmq-consumer</artifactId>
 			<version>${project.version}</version>
 	  	</dependency>
   	</dependencies>

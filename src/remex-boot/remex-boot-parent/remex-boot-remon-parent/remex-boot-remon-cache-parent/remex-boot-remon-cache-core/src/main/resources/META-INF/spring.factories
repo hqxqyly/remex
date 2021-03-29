@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.hqxqyly.remex.boot.remon.cache.config.RemonCacheAutoConfiguration

@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.hqxqyly.remex.boot.fileserver.ftp.config.FileServerFtpAutoConfiguration

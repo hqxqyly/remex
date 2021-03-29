@@ -27,8 +27,6 @@
     <module>remex-boot-mybatis-plus</module>
     <module>remex-boot-web</module>
     <module>remex-boot-validator</module>
-    <module>remex-boot-cache-parent</module>
-    <module>remex-boot-fileserver-parent</module>
     <module>remex-boot-swagger-parent</module>
     <module>remex-boot-shiro-parent</module>
     <module>remex-boot-auth</module>
@@ -36,7 +34,6 @@
     <module>remex-boot-seata-parent</module>
   	<module>remex-boot-poi</module>
   	<module>remex-boot-sequence-parent</module>
-  	<module>remex-boot-remon-parent</module>
     <module>remex-boot-rocketmq-parent</module>
   </modules>
 </project>

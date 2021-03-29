@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.github.hqxqyly.remex.boot.fileserver.utils.FileServerUtils;
 import com.github.hqxqyly.remex.boot.utils.Assist;
 import com.github.hqxqyly.remex.crude.fileserver.framework.IFileServerController;
 import com.github.hqxqyly.remex.fast.common.structure.rsp.Result;
+import com.github.hqxqyly.remex.solution.fileserver.utils.FileServerUtils;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

@@ -5,9 +5,9 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
-import com.github.hqxqyly.remex.boot.cache.common.utils.CacheOutUtils;
 import com.github.hqxqyly.remex.boot.redis.client.RedisClient;
 import com.github.hqxqyly.remex.boot.utils.ApplicationContextUtils;
+import com.github.hqxqyly.remex.solution.cache.common.utils.CacheOutUtils;
 
 /**
  * redis工具类

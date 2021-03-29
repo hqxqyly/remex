@@ -13,8 +13,8 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
-import com.github.hqxqyly.remex.boot.cache.common.client.ICacheOutClient;
 import com.github.hqxqyly.remex.boot.utils.ApplicationContextUtils;
+import com.github.hqxqyly.remex.solution.cache.common.client.ICacheOutClient;
 
 /**
  * redis处理器

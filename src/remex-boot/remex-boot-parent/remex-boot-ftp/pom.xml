@@ -13,7 +13,7 @@
   <dependencies>
   	<dependency>
 	    <groupId>com.github.hqxqyly.remex.boot</groupId>
-	    <artifactId>remex-boot-fileserver-common</artifactId>
+	    <artifactId>remex-solution-fileserver-common</artifactId>
 	</dependency>
 	
 	<dependency>

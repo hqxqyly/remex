@@ -1,6 +1,6 @@
 package com.github.hqxqyly.remex.boot.ehcache.utils;
 
-import com.github.hqxqyly.remex.boot.cache.common.utils.CacheOutUtils;
+import com.github.hqxqyly.remex.solution.cache.common.utils.CacheOutUtils;
 
 /**
  * EhCache工具类

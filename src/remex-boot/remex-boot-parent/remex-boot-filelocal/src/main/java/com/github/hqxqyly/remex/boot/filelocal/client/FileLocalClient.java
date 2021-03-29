@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import com.github.hqxqyly.remex.boot.fileserver.common.client.IFileServerOutClient;
 import com.github.hqxqyly.remex.boot.io.utils.FileIoUtils;
 import com.github.hqxqyly.remex.boot.utils.Assist;
+import com.github.hqxqyly.remex.solution.fileserver.common.client.IFileServerOutClient;
 
 /**
  * 本地文件处理器

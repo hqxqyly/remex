@@ -13,7 +13,7 @@
   <dependencies>
   	<dependency>
 	    <groupId>com.github.hqxqyly.remex.boot</groupId>
-	    <artifactId>remex-boot-cache-common</artifactId>
+	    <artifactId>remex-solution-cache-common</artifactId>
 	</dependency>
   </dependencies>
 </project>

@@ -22,7 +22,7 @@
 	</dependency>
 	<dependency>
 		<groupId>com.github.hqxqyly.remex.boot</groupId>
-		<artifactId>remex-boot-fileserver-core</artifactId>
+		<artifactId>remex-solution-fileserver-core</artifactId>
 	</dependency>
   </dependencies>
 </project>

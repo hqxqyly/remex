@@ -1,8 +1,8 @@
 package com.github.hqxqyly.remex.crude.fileserver.framework;
 
-import com.github.hqxqyly.remex.boot.fileserver.utils.FileServerUtils;
 import com.github.hqxqyly.remex.crude.fileserver.api.msg.MsgFileServerEnum;
 import com.github.hqxqyly.remex.fast.framework.structure.controller.IBaseBasicController;
+import com.github.hqxqyly.remex.solution.fileserver.utils.FileServerUtils;
 
 /**
  * 基础文件接口

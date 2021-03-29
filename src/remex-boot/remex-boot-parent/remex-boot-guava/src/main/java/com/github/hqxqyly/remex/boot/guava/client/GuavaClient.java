@@ -12,9 +12,9 @@ import java.util.function.Supplier;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.github.hqxqyly.remex.boot.cache.common.client.ICacheOutClient;
 import com.github.hqxqyly.remex.boot.utils.Assist;
 import com.github.hqxqyly.remex.boot.utils.LockUtils;
+import com.github.hqxqyly.remex.solution.cache.common.client.ICacheOutClient;
 
 /**
  * <pre>
