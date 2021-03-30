@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+  <artifactId>remexfastbuilderProject-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<remex.version>1.0.0-RELEASE</remex.version>
+  	<boot.version>2.3.0.RELEASE</boot.version>
+    <spring.version>5.2.6.RELEASE</spring.version>
+  </properties>
+  
+  <modules>
+    <module>remexfastbuilderProject-common</module>
+    <module>remexfastbuilderProject-framework</module>
+    <module>remexfastbuilderProject-api</module>
+    <module>remexfastbuilderProject-server</module>
+    <module>remexfastbuilderProject-config</module>
+    <module>remexfastbuilderProject-gateway-service</module>
+    <module>remexfastbuilderProject-org-api</module>
+    <module>remexfastbuilderProject-org-service</module>
+    <module>remexfastbuilderProject-resources-api</module>
+    <module>remexfastbuilderProject-resources-service</module>
+    <module>remexfastbuilderProject-media-api</module>
+    <module>remexfastbuilderProject-media-service</module>
+    <module>remexfastbuilderProject-eureka</module>
+  </modules>
+  
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+  			<artifactId>remexfastbuilderProject-common</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+  			<artifactId>remexfastbuilderProject-framework</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+  			<artifactId>remexfastbuilderProject-api</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+  			<artifactId>remexfastbuilderProject-server</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+			<artifactId>remexfastbuilderProject-org-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+			<artifactId>remexfastbuilderProject-resources-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+			<artifactId>remexfastbuilderProject-media-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+  		
+  		<dependency>
+		    <groupId>com.github.hqxqyly.remex.crude</groupId>
+		    <artifactId>remex-crude-dependencies</artifactId>
+		    <version>${remex.version}</version>
+		    <type>pom</type>
+		    <scope>import</scope>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+</project>

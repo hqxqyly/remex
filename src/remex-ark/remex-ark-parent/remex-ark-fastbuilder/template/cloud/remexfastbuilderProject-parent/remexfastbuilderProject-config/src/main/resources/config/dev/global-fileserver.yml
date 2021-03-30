@@ -1,0 +1,16 @@
+#文件信息
+fileserver:
+   #缩略图模型
+   thumbnailModelMap:
+      default:
+         size: -1
+      small:
+         size: 300
+         prefix: remexfastbuildertemplateSmall
+      tiny:
+         size: 100
+         prefix: remexfastbuildertemplateTiny
+   #文件信息上下文
+   context:
+      #demo
+      DEMO: remexfastbuildertemplate/demo

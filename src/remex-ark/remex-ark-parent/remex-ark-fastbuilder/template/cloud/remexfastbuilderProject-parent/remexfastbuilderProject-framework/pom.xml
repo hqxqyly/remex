@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+    <artifactId>remexfastbuilderProject-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>remexfastbuilderProject-framework</artifactId>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>remexfastbuilderpackage.remexfastbuildertemplate</groupId>
+		<artifactId>remexfastbuilderProject-api</artifactId>
+	</dependency>
+  		
+  	<dependency>
+  		<groupId>com.github.hqxqyly.remex.fast</groupId>
+  		<artifactId>remex-fast-framework</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
+		<artifactId>remex-cloud-projects-service-eureka</artifactId>
+  	</dependency>
+  </dependencies>
+</project>

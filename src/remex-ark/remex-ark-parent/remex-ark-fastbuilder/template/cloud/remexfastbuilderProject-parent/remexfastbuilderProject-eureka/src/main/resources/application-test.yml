@@ -1,0 +1,4 @@
+eureka:
+   server: 
+      enableSelfPreservation: false
+      evictionIntervalTimerInMs: 3

@@ -1,0 +1,9 @@
+eureka:
+   client:
+      preferSameZoneEureka: true
+      registry-fetch-interval-seconds: 2
+   instance:
+      metadataMap:
+         zone: ${spring.cloud.client.ip-address}
+      lease-renewal-interval-in-seconds: 1
+      lease-expiration-duration-in-seconds: 2

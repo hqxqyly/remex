@@ -1,0 +1,21 @@
+feign:
+   hystrix:
+      enabled: true
+
+hystrix:
+   command:
+      default:
+         execution:
+            isolation:
+               thread:
+                  timeoutInMilliseconds: 125000
+   threadpool:
+      default:
+         coreSize: 100
+         
+ribbon:
+   ConnectTimeout: 1000
+   ReadTimeout: 60000
+   OkToRetryOnAllOperations: true
+   MaxAutoRetriesNextServer: 1
+   MaxAutoRetries: 0

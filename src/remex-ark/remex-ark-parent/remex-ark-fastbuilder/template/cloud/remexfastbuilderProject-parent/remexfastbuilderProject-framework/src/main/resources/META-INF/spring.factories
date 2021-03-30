@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+remexfastbuilderpackage.remexfastbuildertemplate.framework.aop.ServiceAop,\
+remexfastbuilderpackage.remexfastbuildertemplate.framework.aop.ControllerAop

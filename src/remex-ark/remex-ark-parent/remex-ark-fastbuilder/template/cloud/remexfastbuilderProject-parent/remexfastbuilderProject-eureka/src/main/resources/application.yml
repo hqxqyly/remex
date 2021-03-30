@@ -1,0 +1,17 @@
+server:
+   #端口
+   port: 27001
+
+spring:
+   application:
+      #项目名
+      name: remexfastbuildertemplate-eureka
+     
+eureka:
+   client:   
+      registerWithEureka: false
+      fetchRegistry: false
+
+logging:
+   level:
+      com.netflix: warn

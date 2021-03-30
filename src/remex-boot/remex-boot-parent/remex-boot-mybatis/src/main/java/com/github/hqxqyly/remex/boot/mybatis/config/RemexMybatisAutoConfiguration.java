@@ -31,7 +31,8 @@ import com.github.hqxqyly.remex.boot.mybatis.logging.MybatisLogbackLog;
  *
  */
 @MapperScans(value = {@MapperScan("*.*.*.dao"), @MapperScan("*.*.*.dao.*"), @MapperScan("*.*.*.*.dao"), @MapperScan("*.*.*.*.dao.*")
-	, @MapperScan("*.*.*.*.*.dao"), @MapperScan("*.*.*.*.*.dao.*")})
+	, @MapperScan("*.*.*.*.*.dao"), @MapperScan("*.*.*.*.*.dao.*")
+	, @MapperScan("*.*.*.*.*.*.dao"), @MapperScan("*.*.*.*.*.*.dao.*")})
 @AutoConfigureBefore(MybatisAutoConfiguration.class)
 @Configuration
 public class RemexMybatisAutoConfiguration extends MybatisAutoConfiguration implements IAssistConfig {

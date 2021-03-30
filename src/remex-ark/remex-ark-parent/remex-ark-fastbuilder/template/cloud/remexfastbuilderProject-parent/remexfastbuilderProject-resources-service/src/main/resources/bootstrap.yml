@@ -1,0 +1,40 @@
+server:
+   #端口
+   port: 27005
+
+eurekaServer: http://127.0.0.1:27001/eureka/
+
+spring:
+   application:
+      #项目名
+      name: remexfastbuildertemplate-resources-service
+   cloud:
+      config:
+         name: ${spring.application.name}, global-system, global-db, global-fileserver
+         label: master
+         discovery: 
+            #开启配置服务发现
+            enabled: true
+            #配置服务实例名称
+            serviceId: remexfastbuildertemplate-config
+      alibaba:
+         seata:
+            tx-service-group: default_group
+seata:
+   registry: 
+      type: eureka
+      eureka:
+         serviceUrl: ${eurekaServer}
+   service:
+      vgroupMapping: 
+         default_group: smart-seata
+         
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: ${eurekaServer}
+   instance:
+      ipAddress: ${spring.cloud.client.ip-address}
+      instanceId: ${spring.cloud.client.ip-address}:${server.port}
+      statusPageUrl: http://${spring.cloud.client.ip-address}:${server.port}/doc.html
+      preferIpAddress: true

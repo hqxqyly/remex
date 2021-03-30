@@ -1,0 +1,27 @@
+server:
+   #端口
+   port: 27003
+
+spring:
+   application:
+      #项目名
+      name: remexfastbuildertemplate-gateway-service
+   cloud:
+      config:
+         name: ${spring.application.name}, global-system
+         label: master
+         discovery: 
+            #开启配置服务发现
+            enabled: true
+            #配置服务实例名称
+            serviceId: remexfastbuildertemplate-config
+
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: ${eurekaServer:http://127.0.0.1:27001/eureka/} 
+   instance:
+      ipAddress: ${spring.cloud.client.ip-address}
+      instanceId: ${spring.cloud.client.ip-address}:${server.port}
+      statusPageUrl: http://${spring.cloud.client.ip-address}:${server.port}/doc.html
+      preferIpAddress: true

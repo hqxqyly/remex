@@ -1,0 +1,26 @@
+server:
+   #端口
+   port: 27002
+
+spring:
+   application:
+      #项目名
+      name: remexfastbuildertemplate-config
+   profiles:
+      #设置为本地启动的方式，而不是通过git
+      active: native
+   cloud:
+      config:
+         server:
+            native:
+               #配置文件所在目录
+               searchLocations: ${configDir:classpath:/config/dev}
+
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: ${eurekaServer:http://127.0.0.1:27001/eureka/} 
+   instance:
+      ipAddress: ${spring.cloud.client.ip-address}
+      instanceId: ${spring.cloud.client.ip-address}:${server.port}
+      preferIpAddress: true

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+remexfastbuilderpackage.remexfastbuildertemplate.media.config.RemexfastbuildertemplateMediaApiAutoConfiguration
