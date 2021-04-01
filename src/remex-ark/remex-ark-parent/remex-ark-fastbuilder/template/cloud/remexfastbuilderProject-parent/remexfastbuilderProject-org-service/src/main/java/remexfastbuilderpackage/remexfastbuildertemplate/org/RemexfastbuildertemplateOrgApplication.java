@@ -4,13 +4,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.github.hqxqyly.remex.fast.framework.utils.ApplicationUtils;
 
+import remexfastbuilderpackage.remexfastbuildertemplate.org.config.RemexfastbuildertemplateOrgApiAutoConfiguration;
+
 /**
  * 启动类
  *
  * @author Qiaoxin.Hong
  *
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = RemexfastbuildertemplateOrgApiAutoConfiguration.class)
 public class RemexfastbuildertemplateOrgApplication {
 
 	/**

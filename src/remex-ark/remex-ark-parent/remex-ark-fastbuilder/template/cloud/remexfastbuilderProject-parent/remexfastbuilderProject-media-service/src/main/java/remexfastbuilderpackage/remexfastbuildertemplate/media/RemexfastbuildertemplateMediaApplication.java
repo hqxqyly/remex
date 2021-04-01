@@ -4,13 +4,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.github.hqxqyly.remex.fast.framework.utils.ApplicationUtils;
 
+import remexfastbuilderpackage.remexfastbuildertemplate.media.config.RemexfastbuildertemplateMediaApiAutoConfiguration;
+
 /**
  * 启动类
  *
  * @author Qiaoxin.Hong
  *
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = RemexfastbuildertemplateMediaApiAutoConfiguration.class)
 public class RemexfastbuildertemplateMediaApplication {
 
 	/**

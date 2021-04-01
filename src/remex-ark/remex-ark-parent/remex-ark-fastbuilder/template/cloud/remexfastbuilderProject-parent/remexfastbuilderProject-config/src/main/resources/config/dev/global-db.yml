@@ -1,6 +1,6 @@
 spring: 
    #数据库
    datasource:
-      url: jdbc:mysql://10.10.1.65:3306/demo?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=3&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false
+      url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=3&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&useSSL=false
       username: root
-      password: 2wdc%RDX
+      password: 123456

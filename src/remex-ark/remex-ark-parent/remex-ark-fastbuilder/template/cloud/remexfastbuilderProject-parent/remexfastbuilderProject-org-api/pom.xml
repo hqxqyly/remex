@@ -16,9 +16,9 @@
 		<artifactId>remexfastbuilderProject-api</artifactId>
 	</dependency>
 	
-  	<!-- <dependency>
+  	<dependency>
   		<groupId>com.github.hqxqyly.remex.crude</groupId>
-		<artifactId>remex-crude-org-api-cloud</artifactId>
-  	</dependency> -->
+		<artifactId>remex-crude-org-feign</artifactId>
+  	</dependency>
   </dependencies>
 </project>

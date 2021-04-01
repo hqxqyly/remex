@@ -21,10 +21,16 @@ import remexfastbuilderpackage.remexfastbuildertemplate.server.structure.control
 @Api(tags = "demo接口")
 @RestController
 @RequestMapping("/org/demo/")
-public class OrgDemoController implements BaseController/* , OrgDemoApi */ {
+public class OrgDemoController implements BaseController {
 	
 	@Autowired
 	OrgDemoService orgDemoService;
+	
+	@ApiOperation("test")
+	@PostMapping("test")
+	public Result<String> test() {
+		return newResult("Hello World");
+	}
 
 	@ApiOperation("创建数据")
 	@PostMapping("createData")

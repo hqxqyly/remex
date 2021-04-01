@@ -36,6 +36,9 @@ public class SystemController<DTO extends LoginDto, P extends PrincipalDto> impl
 	@ApiOperation("登录")
 	@PostMapping("login")
 	public Result<DTO> login(@RequestBody LoginReq req) {
+		//参数验证
+		validate(req);
+		
 		//登录
 		LoginResult<P> loginResult = ShiroUtils.login(req.getUsername(), req.getPassword());
 		
