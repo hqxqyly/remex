@@ -61,9 +61,9 @@ public class RemexApiModelPropertyPropertyBuilder extends ApiModelPropertyProper
 						NotEmpty annotationNotEmpty = annotatedField.getAnnotation(NotEmpty.class);
 						ApiModelPropertyHidden annotationApiModelPropertyHidden = annotatedField.getAnnotation(ApiModelPropertyHidden.class);
 						
-						if (annotatedField.getFullName().indexOf("RoleEntity") != -1) {
-							System.out.println();
-						}
+//						if (annotatedField.getFullName().indexOf("RoleEntity") != -1) {
+//							System.out.println();
+//						}
 						
 //						context.getBuilder().extensions(toExtension(annotationApiModelProperty));
 //						context.getBuilder().extensions(Assist.asList(new StringVendorExtension("x-order","aaa")));

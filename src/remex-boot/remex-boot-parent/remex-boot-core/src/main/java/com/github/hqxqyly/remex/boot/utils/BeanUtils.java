@@ -25,7 +25,7 @@ public class BeanUtils {
 		Assist.notNull(clazz, "clazz cannot be null");
 		
 		try {
-			return clazz.newInstance();
+			return clazz.getDeclaredConstructor().newInstance();
 		} catch (Exception e) {
 			throw Assist.newException("new instance error", e);
 		}

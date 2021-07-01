@@ -19,6 +19,7 @@ import com.github.hqxqyly.remex.boot.exception.RemexServerException;
 import com.github.hqxqyly.remex.boot.msg.IMsgEnum;
 import com.github.hqxqyly.remex.boot.msg.MsgBasicEnum;
 import com.github.hqxqyly.remex.boot.mybatis.plus.utils.MybatisPlusUtils;
+import com.github.hqxqyly.remex.boot.mybatis.plus.wrapper.query.RemexQueryWrapper;
 import com.github.hqxqyly.remex.boot.utils.Assist;
 
 /**
@@ -79,6 +80,14 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	 */
 	default QueryWrapper<T> newWrapper(T entity) {
 		return new QueryWrapper<T>(entity);
+	}
+	
+	/**
+	 * 创建条件
+	 * @return
+	 */
+	default RemexQueryWrapper<T> newRemexWrapper() {
+		return new RemexQueryWrapper<>();
 	}
 	
 	/**
@@ -196,86 +205,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	}
 	
 	/**
-	 * 根据某字段值查询数据列表
-	 * @return
-	 */
-	default List<T> selectListByKey(SFunction<T, ?> key, Object value) {
-		return selectList(newLambdaWrapper(key, value));
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表，并转换对象
-	 * @return
-	 */
-	default <DTO> List<DTO> selectListByKey(Class<DTO> dtoClass, SFunction<T, ?> key, Object value) {
-		return Assist.toBeanList(selectListByKey(key, value), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表
-	 * @return
-	 */
-	default List<T> selectListByKey(SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2) {
-		return selectList(newLambdaWrapper(key1, value1).eq(key2, value2));
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表，并转换对象
-	 * @return
-	 */
-	default <DTO> List<DTO> selectListByKey(Class<DTO> dtoClass, SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2) {
-		return Assist.toBeanList(selectListByKey(key1, value1, key2, value2), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表
-	 * @return
-	 */
-	default List<T> selectListByKey(SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2, SFunction<T, ?> key3, Object value3) {
-		return selectList(newLambdaWrapper(key1, value1).eq(key2, value2).eq(key3, value3));
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表，并转换对象
-	 * @return
-	 */
-	default <DTO> List<DTO> selectListByKey(Class<DTO> dtoClass, SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2, SFunction<T, ?> key3, Object value3) {
-		return Assist.toBeanList(selectListByKey(key1, value1, key2, value2, key3, value3), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表并升序
-	 * @return
-	 */
-	default List<T> selectListByKeyAsc(SFunction<T, ?> key, Object value, SFunction<T, ?> order) {
-		return selectList(newLambdaWrapper(key, value).orderByAsc(order));
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表并升序，并转换对象
-	 * @return
-	 */
-	default <DTO> List<DTO> selectListByKeyAsc(Class<DTO> dtoClass, SFunction<T, ?> key, Object value, SFunction<T, ?> order) {
-		return Assist.toBeanList(selectListByKeyAsc(key, value, order), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表并降序
-	 * @return
-	 */
-	default List<T> selectListByKeyDesc(SFunction<T, ?> key, Object value, SFunction<T, ?> order) {
-		return selectList(newLambdaWrapper(key, value).orderByDesc(order));
-	}
-	
-	/**
-	 * 根据某字段值查询数据列表并降序，并转换对象
-	 * @return
-	 */
-	default <DTO> List<DTO> selectListByKeyDesc(Class<DTO> dtoClass, SFunction<T, ?> key, Object value, SFunction<T, ?> order) {
-		return Assist.toBeanList(selectListByKeyDesc(key, value, order), dtoClass);
-	}
-	
-	/**
 	 * 查询所有数据列表
 	 * @return
 	 */
@@ -305,22 +234,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	 */
 	default List<T> selectListAllDesc(String order) {
 		return selectList(newWrapper().orderByAsc(order));
-	}
-	
-	/**
-	 * 查询所有数据列表并升序
-	 * @return
-	 */
-	default List<T> selectListAllAsc(SFunction<T, ?> order) {
-		return selectList(newLambdaWrapper().orderByAsc(order));
-	}
-	
-	/**
-	 * 查询所有数据列表并降序
-	 * @return
-	 */
-	default List<T> selectListAllDesc(SFunction<T, ?> order) {
-		return selectList(newLambdaWrapper().orderByAsc(order));
 	}
 	
 	/**
@@ -418,54 +331,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	}
 	
 	/**
-	 * 根据某字段值查询单条数据
-	 * @return
-	 */
-	default T selectOneByKey(SFunction<T, ?> key, Object value) {
-		return selectOne(newLambdaWrapper(key, value));
-	}
-	
-	/**
-	 * 根据某字段值查询单条数据，并转换对象
-	 * @return
-	 */
-	default <DTO> DTO selectOneByKey(Class<DTO> dtoClass, SFunction<T, ?> key, Object value) {
-		return Assist.toBean(selectOneByKey(key, value), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询单条数据
-	 * @return
-	 */
-	default T selectOneByKey(SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2) {
-		return selectOne(newLambdaWrapper(key1, value1).eq(key2, value2));
-	}
-	
-	/**
-	 * 根据某字段值查询单条数据，并转换对象
-	 * @return
-	 */
-	default <DTO> DTO selectOneByKey(Class<DTO> dtoClass, SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2) {
-		return Assist.toBean(selectOneByKey(key1, value1, key2, value2), dtoClass);
-	}
-	
-	/**
-	 * 根据某字段值查询单条数据
-	 * @return
-	 */
-	default T selectOneByKey(SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2, SFunction<T, ?> key3, Object value3) {
-		return selectOne(newLambdaWrapper(key1, value1).eq(key2, value2).eq(key2, value3));
-	}
-	
-	/**
-	 * 根据某字段值查询单条数据，并转换对象
-	 * @return
-	 */
-	default <DTO> DTO selectOneByKey(Class<DTO> dtoClass, SFunction<T, ?> key1, Object value1, SFunction<T, ?> key2, Object value2, SFunction<T, ?> key3, Object value3) {
-		return Assist.toBean(selectOneByKey(key1, value1, key2, value2, key3, value3), dtoClass);
-	}
-	
-	/**
      * 根据 entity 条件，查询一条记录，并转换对象
      *
      * @param queryWrapper 实体对象封装操作类（可以为 null）
@@ -519,11 +384,27 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
     }
 	
 	/**
+	 * 根据条件分页查询数据列表
+	 * @return
+	 */
+	default IPage<T> selectPageByKey(int pageNum, int pageSize, String key, Object value) {
+		return selectPage(pageNum, pageSize, newWrapper(key, value));
+	}
+	
+	/**
 	 * 根据条件分页查询数据列表，并转换对象
 	 * @return
 	 */
 	default <DTO> IPage<DTO> selectPage(Class<DTO> dtoClass, int pageNum, int pageSize) {
 		return selectPage(dtoClass, pageNum, pageSize, null);
+	}
+	
+	/**
+	 * 根据条件分页查询数据列表，并转换对象
+	 * @return
+	 */
+	default <DTO> IPage<DTO> selectPageByKey(Class<DTO> dtoClass, int pageNum, int pageSize, String key, Object value) {
+		return selectPage(dtoClass, pageNum, pageSize, newWrapper(key, value));
 	}
 	
 	/**
@@ -549,8 +430,8 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	 * 根据某字段值修改数据
 	 * @return
 	 */
-	default int updateByKey(T entity, SFunction<T, ?> key, Object value) {
-		return update(entity, newLambdaWrapper(key, value));
+	default int updateByKey(T entity, String key, Object value, String key2, Object value2) {
+		return update(entity, newWrapper(key, value).eq(key2, value2));
 	}
 	
 
@@ -563,16 +444,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	 */
 	default int deleteByKey(String key, Object value) {
 		return delete(newWrapper(key, value));
-	}
-	
-	/**
-	 * 根据某字段值删除数据
-	 * @param key
-	 * @param value
-	 * @return
-	 */
-	default int deleteByKey(SFunction<T, ?> key, Object value) {
-		return delete(newLambdaWrapper(key, value));
 	}
 	
 	
@@ -603,36 +474,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	 * 根据某字段值断言不能存在数据，否则抛出异常
 	 */
 	default void assertNotExistByKey(String key, Object value, IMsgEnum msgEnum, Object...msgArgs) {
-		if (!existByKey(key, value))
-			throw new RemexServerException(msgEnum, msgArgs);
-	}
-	
-	/**
-	 * 根据某字段值断言必须存在数据，否则抛出异常
-	 */
-	default void assertExistByKey(SFunction<T, ?> key, Object value) {
-		assertExistByKey(key, value, MsgBasicEnum.DATA_NOT_EXISTS);
-	}
-	
-	/**
-	 * 根据某字段值断言必须存在数据，否则抛出异常
-	 */
-	default void assertExistByKey(SFunction<T, ?> key, Object value, IMsgEnum msgEnum, Object...msgArgs) {
-		if (existByKey(key, value))
-			throw new RemexServerException(msgEnum, msgArgs);
-	}
-	
-	/**
-	 * 根据某字段值断言不能存在数据，否则抛出异常
-	 */
-	default void assertNotExistByKey(SFunction<T, ?> key, Object value) {
-		assertNotExistByKey(key, value, MsgBasicEnum.DATA_ALREADY_EXISTS);
-	}
-	
-	/**
-	 * 根据某字段值断言不能存在数据，否则抛出异常
-	 */
-	default void assertNotExistByKey(SFunction<T, ?> key, Object value, IMsgEnum msgEnum, Object...msgArgs) {
 		if (!existByKey(key, value))
 			throw new RemexServerException(msgEnum, msgArgs);
 	}
@@ -701,37 +542,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 		return result;
 	}
 	
-	/**
-	 * 根据某字段值断言必须存在数据，有则返回数据，没有则抛出异常
-	 */
-	default T assertExistSelectOneByKey(SFunction<T, ?> key, Object value) {
-		return assertExistSelectOneByKey(key, value, MsgBasicEnum.DATA_NOT_EXISTS);
-	}
-
-	/**
-	 * 根据某字段值断言必须存在数据，有则返回数据，没有则抛出异常
-	 */
-	default T assertExistSelectOneByKey(SFunction<T, ?> key, Object value, IMsgEnum msgEnum, Object...msgArgs) {
-		T result = selectOneByKey(key, value);
-		Assist.notNull(result, msgEnum, msgArgs);
-		return result;
-	}
-	
-	/**
-	 * 根据某字段值断言必须存在数据，有则返回数据，没有则抛出异常
-	 */
-	default List<T> assertExistSelectByKey(SFunction<T, ?> key, Object value) {
-		return assertExistSelectByKey(key, value, MsgBasicEnum.DATA_NOT_EXISTS);
-	}
-
-	/**
-	 * 根据某字段值断言必须存在数据，有则返回数据，没有则抛出异常
-	 */
-	default List<T> assertExistSelectByKey(SFunction<T, ?> key, Object value, IMsgEnum msgEnum, Object...msgArgs) {
-		List<T> result = selectListByKey(key, value);
-		Assist.notEmpty(result, msgEnum, msgArgs);
-		return result;
-	}
 	
 	/**
 	 * 根据ID修改，无记录修改成功则抛出异常
@@ -759,16 +569,6 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 	}
 	
 	/**
-	 * 根据某字段值判断是否存在数据
-	 * @param key
-	 * @param value
-	 * @return
-	 */
-	default boolean existByKey(SFunction<T, ?> key, Object value) {
-		return selectCountLimit(1, newLambdaWrapper(key, value)) != 0;
-	}
-	
-	/**
 	 * 查询记录数，限制在一定数量范围内，避免全量查询
 	 * @return
 	 */
@@ -776,5 +576,13 @@ public interface RemexBaseMapper<T> extends BaseMapper<T> {
 		Page<T> page = newPageReq(pageSize);
 		page.setSearchCount(false);
 		return selectCountLimit(page, queryWrapper);
+	}
+	
+	/**
+	 * 根据某字段值查询总记录数
+	 * @return
+	 */
+	default int selectCountByKey(String key, Object value) {
+		return selectCount(newWrapper(key, value));
 	}
 }

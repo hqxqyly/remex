@@ -17,37 +17,37 @@ public class BConst {
 	public final static String NULL = "null";
 	
 	/** 是：1 */
-	public final static Integer YES = new Integer(1);
+	public final static Integer YES = Integer.valueOf(1);
 	
 	/** 否：0 */
-	public final static Integer NO = new Integer(0);
+	public final static Integer NO = Integer.valueOf(0);
 	
 	/** 0 */
-	public final static Integer ZERO = new Integer(0);
+	public final static Integer ZERO = Integer.valueOf(0);
 	
 	/** 1 */
-	public final static Integer ONE = new Integer(1);
+	public final static Integer ONE = Integer.valueOf(1);
 	
 	/** 2 */
-	public final static Integer TWO = new Integer(2);
+	public final static Integer TWO = Integer.valueOf(2);
 	
 	/** 3 */
-	public final static Integer THREE = new Integer(3);
+	public final static Integer THREE = Integer.valueOf(3);
 	
 	/** 4 */
-	public final static Integer FOUR = new Integer(4);
+	public final static Integer FOUR = Integer.valueOf(4);
 	
 	/** 5 */
-	public final static Integer FIVE = new Integer(5);
+	public final static Integer FIVE = Integer.valueOf(5);
 	
 	/** 6 */
-	public final static Integer SIX = new Integer(6);
+	public final static Integer SIX = Integer.valueOf(6);
 	
 	/** 7 */
-	public final static Integer SEVEN = new Integer(7);
+	public final static Integer SEVEN = Integer.valueOf(7);
 	
 	/** -1 */
-	public final static Integer MINUS_ONE = new Integer(-1);
+	public final static Integer MINUS_ONE = Integer.valueOf(-1);
 	
 	/** 0 */
 	public final static String STR_ZERO = "0";
