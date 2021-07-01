@@ -2,6 +2,8 @@ package com.github.hqxqyly.remex.boot.utils;
 
 import java.io.Closeable;
 import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +28,9 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.github.hqxqyly.remex.boot.constant.BConst;
 import com.github.hqxqyly.remex.boot.exception.RemexException;
 import com.github.hqxqyly.remex.boot.exception.RemexServerException;
 import com.github.hqxqyly.remex.boot.msg.IMsgEnum;
@@ -1027,7 +1031,7 @@ public class Assist {
 	 * @param action
 	 */
 	public static <T> void forEach(Collection<T> val, Consumer<T> action) {
-		if (val != null)
+		if (isNotEmpty(val))
 			val.forEach(action);
 	}
 	
@@ -1038,7 +1042,7 @@ public class Assist {
 	 * @param action
 	 */
 	public static <T> void forEach(T[] val, Consumer<T> action) {
-		if (val != null)
+		if (isNotEmpty(val))
 			Arrays.stream(val).forEach(action);
 	}
 	
@@ -1050,7 +1054,7 @@ public class Assist {
 	 * @param action
 	 */
 	public static <K, V> void forEach(Map<K, V> val, BiConsumer<K, V> action) {
-		if (val != null)
+		if (isNotEmpty(val))
 			val.forEach(action);
 	}
 	
@@ -1075,7 +1079,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <T, R> List<R> forEachToList(Collection<T> val, Function<T, R> action) {
-		return val == null ? newList() : toList(val.stream().map(action));
+		return isEmpty(val) ? newList() : toList(val.stream().map(action));
 	}
 	
 	/**
@@ -1087,7 +1091,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <T, R> List<R> forEachToList(T[] val, Function<T, R> action) {
-		return val == null ? newList() : toList(Arrays.stream(val).map(action));
+		return isEmpty(val) ? newList() : toList(Arrays.stream(val).map(action));
 	}
 	
 	/**
@@ -1126,7 +1130,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <T, R> Set<R> forEachToSet(Collection<T> val, Function<T, R> action) {
-		return val == null ? newSet() : toSet(val.stream().map(action));
+		return isEmpty(val) ? newSet() : toSet(val.stream().map(action));
 	}
 	
 	/**
@@ -1138,7 +1142,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <T, R> Set<R> forEachToSet(T[] val, Function<T, R> action) {
-		return val == null ? newSet() : toSet(Arrays.stream(val).map(action));
+		return isEmpty(val) ? newSet() : toSet(Arrays.stream(val).map(action));
 	}
 	
 	/**
@@ -1167,7 +1171,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <T, K, V> Map<K, V> forEachToMap(Collection<T> val, Function<T, K> keyAction, Function<T, V> valueAction) {
-		return val == null ? newMap() : val.stream().collect(Collectors.toMap(keyAction, valueAction));
+		return isEmpty(val) ? newMap() : val.stream().collect(Collectors.toMap(keyAction, valueAction));
 	}
 	
 	/**
@@ -1180,7 +1184,7 @@ public class Assist {
 	 * @return
 	 */
 	public static <K, V> Map<K, V> forEachToMap(Collection<V> val, Function<V, K> keyAction) {
-		return val == null ? newMap() : val.stream().collect(Collectors.toMap(keyAction, o -> o));
+		return isEmpty(val) ? newMap() : val.stream().collect(Collectors.toMap(keyAction, o -> o));
 	}
 	
 	/**
@@ -1328,6 +1332,7 @@ public class Assist {
 	public static Integer toInteger(Object val) {
 		if (val == null) return null;
 		if (val instanceof Integer) return (Integer) val;
+		if (val instanceof Number) return ((Number) val).intValue();
 		return Integer.valueOf(val.toString());
 	}
 	
@@ -1339,6 +1344,7 @@ public class Assist {
 	public static Long toLong(Object val) {
 		if (val == null) return null;
 		if (val instanceof Long) return (Long) val;
+		if (val instanceof Number) return ((Number) val).longValue();
 		return Long.valueOf(val.toString());
 	}
 	
@@ -1350,6 +1356,7 @@ public class Assist {
 	public static Double toDouble(Object val) {
 		if (val == null) return null;
 		if (val instanceof Double) return (Double) val;
+		if (val instanceof Number) return ((Number) val).doubleValue();
 		return Double.valueOf(val.toString());
 	}
 	
@@ -1561,6 +1568,90 @@ public class Assist {
 	
 	
 	/**
+	 * 是否小于
+	 * @param val1
+	 * @param val2
+	 * @return
+	 */
+	public static <T extends Comparable<T>> boolean lt(T val1, T val2) {
+		notNull(val1);
+		notNull(val2);
+		return val1.compareTo(val2) < 0;
+	}
+	
+	/**
+	 * 是否大于
+	 * @param val1
+	 * @param val2
+	 * @return
+	 */
+	public static <T extends Comparable<T>> boolean gt(T val1, T val2) {
+		notNull(val1);
+		notNull(val2);
+		return val1.compareTo(val2) > 0;
+	}
+	
+	/**
+	 * 是否等于
+	 * @param val1
+	 * @param val2
+	 * @return
+	 */
+	public static <T extends Comparable<T>> boolean eq(T val1, T val2) {
+		notNull(val1);
+		notNull(val2);
+		return val1.compareTo(val2) == 0;
+	}
+	
+	/**
+	 * <pre>
+	 * 是否大于0
+	 * null => false
+	 * </pre>
+	 * @param val
+	 * @return
+	 */
+	public static boolean gtZero(BigDecimal val) {
+		return gt(val, BigDecimal.ZERO);
+	}
+	
+	/**
+	 * 是否小于0
+	 * @param val1
+	 * @return
+	 */
+	public static boolean ltZero(BigDecimal val1) {
+		return lt(val1, BigDecimal.ZERO);
+	}
+	
+	/**
+	 * <pre>
+	 * 是否大于0
+	 * null => false
+	 * </pre>
+	 * @param val
+	 * @return
+	 */
+	public static boolean gtZero(Integer val) {
+		return val != null && val > 0;
+	}
+	
+	/**
+	 * <pre>
+	 * 是否小于0
+	 * null => false
+	 * </pre>
+	 * @param val
+	 * @return
+	 */
+	public static boolean ltZero(Integer val) {
+		return val != null && val < 0;
+	}
+	
+	
+	
+	
+	/**
 	 * 抛出异常
 	 * @param msg
 	 */
@@ -1695,6 +1786,44 @@ public class Assist {
 	public static <T> Set<T> filterToSet(T[] val, Predicate<T> action) {
 		if (isEmpty(val)) return newSet();
 		return toSet(Arrays.stream(val).filter(action));
+	}
+	
+	/**
+	 * 过滤出第一条符合条件的数据
+	 * @param <T>
+	 * @param val
+	 * @param action
+	 * @return
+	 */
+	public static <T> T filterFirst(Collection<T> val, Predicate<T> action) {
+		if (isEmpty(val)) return null;
+		for (T item : val) {
+			if (action.test(item))
+				return item;
+		}
+		return null;
+	}
+	
+	/**
+	 * 过滤出指定数量符合条件的数据
+	 * @param <T>
+	 * @param val
+	 * @param action
+	 * @return
+	 */
+	public static <T> List<T> filterToList(Collection<T> val, Predicate<T> action, int count) {
+		List<T> resultList = newList();
+		if (isEmpty(val) || count <= 0) return resultList;
+		
+		for (T item : val) {
+			if (action.test(item)) {
+				resultList.add(item);
+				
+				if (resultList.size() >= count)
+					break;
+			}
+		}
+		return resultList;
 	}
 	
 	
@@ -1899,6 +2028,43 @@ public class Assist {
 	}
 	
 	/**
+	 * 提取集合中的属性，并以,进行拼接，如：a,b,c
+	 * @param <T>
+	 * @param <R>
+	 * @param vals
+	 * @param action
+	 * @param separator
+	 * @return
+	 */
+	public static <T, R> String join(Collection<T> vals, Function<T, R> action) {
+		return join(vals, action, BConst.COMMA);
+	}
+	
+	/**
+	 * 提取集合中的属性，并以分割符进行拼接，如：a,b,c
+	 * @param <T>
+	 * @param <R>
+	 * @param vals
+	 * @param action
+	 * @param separator
+	 * @return
+	 */
+	public static <T, R> String join(Collection<T> vals, Function<T, R> action, String separator) {
+		if (isEmpty(vals)) return STR_EMPTY;
+		separator = defaultString(separator);
+		StringBuilder sb = new StringBuilder();
+		
+		if (isNotEmpty(vals)) {
+			for (T val : vals) {
+				if (sb.length() != 0)
+					sb.append(separator);
+				sb.append(defaultString(action.apply(val)));
+			}
+		}
+		return sb.toString();
+	}
+	
+	/**
 	 * 拼接字符串
 	 * @param val
 	 * @return
@@ -1906,6 +2072,27 @@ public class Assist {
 	public static String join(Object...val) {
 		StringBuilder sb = new StringBuilder();
 		forEach(val, obj -> sb.append(defaultString(obj)));
+		return sb.toString();
+	}
+	
+	/**
+	 * 以分割符进行拼接，如：a,b,c
+	 * @param <T>
+	 * @param <R>
+	 * @param vals
+	 * @param separator
+	 * @return
+	 */
+	public static <T, R> String join(Collection<String> vals, String separator) {
+		if (isEmpty(vals)) return STR_EMPTY;
+		separator = defaultString(separator);
+		StringBuilder sb = new StringBuilder();
+		
+		for (String val : vals) {
+			if (sb.length() != 0)
+				sb.append(separator);
+			sb.append(defaultString(val));
+		}
 		return sb.toString();
 	}
 	
@@ -2049,5 +2236,167 @@ public class Assist {
 	public static <T> boolean anyMatch(Collection<T> coll, Predicate<T> action) {
 		if (isEmpty(coll)) return false;
 		return coll.stream().anyMatch(action);
+	}
+	
+	/**
+	 * 取得第一条记录
+	 * @param <T>
+	 * @param vals
+	 * @return
+	 */
+	public static <T> T findFirst(Collection<T> vals) {
+		if (isNotEmpty(vals))
+			return vals.stream().findFirst().get();
+		return null;
+	}
+	
+	/**
+	 * 取得第一条记录
+	 * @param <T>
+	 * @param vals
+	 * @return
+	 */
+	public static <T> T findFirst(Map<?, T> vals) {
+		if (isNotEmpty(vals)) {
+			for (T val : vals.values()) {
+				return val;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * 从class取field，会考虑父类
+	 * @param clazz
+	 * @param name
+	 * @return
+	 */
+	public static Field findField(Class<?> clazz, String name) {
+		Assist.notNull(clazz, "clazz cannot be null");
+		Assist.notBlank(name, "name cannot be null");
+		
+		try {
+			if (Object.class.equals(clazz)) return null;
+			
+			Field field = null;
+			try {
+				field = clazz.getDeclaredField(name);
+			} catch (NoSuchFieldException e) {
+				//未找到field不抛异常，继续找父类
+			}
+			if (field == null)
+				field = findField(clazz.getSuperclass(), name);
+			
+			return field;
+		} catch (Exception e) {
+			throw new RuntimeException("get declared field error", e);
+		}
+	}
+	
+	/**
+	 * 从class取field列表，会考虑父类，排除静态变量
+	 * @param clazz
+	 */
+	public static List<Field> getFieldList(Class<?> clazz) {
+		if (clazz == null || clazz.equals(Object.class))
+			return null;
+		
+		List<Field> list = toList(clazz.getDeclaredFields());
+		//过滤掉静态变量
+		list = filterToList(list, field -> !Modifier.isStatic(field.getModifiers()));
+		
+		//取得父类属性
+		add(list, getFieldList(clazz.getSuperclass()));
+		return list;
+	}
+	
+	/**
+	 * 从class取field名称列表，会考虑父类，排除静态变量
+	 * @param clazz
+	 */
+	public static List<String> getFieldNameList(Class<?> clazz) {
+		return forEachToList(getFieldList(clazz), Field::getName);
+	}
+	
+	/**
+	 * 构建json
+	 * @param <T>
+	 * @param arr 数量必须为偶数，键1, 值1, ..., 键n, 值n
+	 * @return
+	 */
+	public static String buildJson(Object...arr) {
+		return JSON.toJSONString(asMap(arr));
+	}
+	
+	/**
+	 * 数量
+	 * @param coll
+	 * @return
+	 */
+	public static int size(Collection<?> coll) {
+		return coll == null ? 0 : coll.size();
+	}
+	
+	/**
+	 * 从第一位开始截取字符串
+	 * @param val
+	 * @param length 截取长度
+	 * @return
+	 */
+	public static String substr(String val, int length) {
+		return substr(val, 0, length);
+	}
+	
+	/**
+	 * 截取字符串
+	 * @param val
+	 * @param beginIndex 正数：正向截；负数：反向截；
+	 * @param length 截取长度
+	 * @return
+	 */
+	public static String substr(String val, int beginIndex, int length) {
+		if (val == null)
+			return STR_EMPTY;
+		if (length <= 0 || val.length() <= length)
+			return val;
+		if (beginIndex < 0)
+			return val.substring(Math.abs(beginIndex) - length, beginIndex);
+		else
+			return val.substring(beginIndex, beginIndex + length);
+	}
+	
+	/**
+	 * 以某个属性值去重
+	 * @param <T>
+	 * @param <R>
+	 * @param val
+	 * @param action
+	 * @return
+	 */
+	public static <T, R> List<T> distinctToList(Collection<T> val, Function<T, R> action) {
+		if (val == null) return newList();
+		
+		List<T> resultList = newList();
+		Set<R> keySet = newSet();
+		
+		forEach(val, item -> {
+			R key = action.apply(item);
+			if (!keySet.contains(key)) {
+				keySet.add(key);
+				resultList.add(item);
+			}
+		});
+		
+		return resultList;
+	}
+	
+	/**
+	 * 字符串首位转大写
+	 * @param val
+	 * @return
+	 */
+	public static String strFirstToUpperCase(String val) {
+		if (isBlank(val)) return val;
+		return val.substring(0, 1).toUpperCase() + val.substring(1);
 	}
 }
