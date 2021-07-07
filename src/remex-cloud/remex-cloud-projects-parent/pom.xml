@@ -2,9 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.github.hqxqyly.remex.cloud</groupId>
-    <artifactId>remex-cloud-parent</artifactId>
+    <artifactId>remex-cloud-dependencies</artifactId>
     <version>1.0.0-RELEASE</version>
+    <relativePath>../remex-cloud-dependencies</relativePath>
   </parent>
+  
   <artifactId>remex-cloud-projects-parent</artifactId>
   <packaging>pom</packaging>
   

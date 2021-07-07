@@ -12,7 +12,7 @@
   <packaging>pom</packaging>
   
   <modules>
-    <module>remex-cloud-projects-parent</module>
     <module>remex-cloud-seata</module>
+    <module>remex-cloud-zuul</module>
   </modules>
 </project>

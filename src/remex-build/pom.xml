@@ -12,13 +12,9 @@
   <modules>
   	<module>../remex-out-dependencies</module>
   	<module>../remex-boot/remex-boot-dependencies</module>
-  	<module>../remex-boot/remex-boot-parent</module>
   	<module>../remex-cloud/remex-cloud-dependencies</module>
-  	<module>../remex-cloud/remex-cloud-parent</module>
   	<module>../remex-fast/remex-fast-dependencies</module>
-  	<module>../remex-fast/remex-fast-parent</module>
   	<module>../remex-crude/remex-crude-dependencies</module>
-  	<module>../remex-crude/remex-crude-parent</module>
   </modules>
   
   <build>
