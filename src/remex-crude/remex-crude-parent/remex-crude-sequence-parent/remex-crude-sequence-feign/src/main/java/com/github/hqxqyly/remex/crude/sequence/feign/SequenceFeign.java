@@ -11,8 +11,10 @@ import com.github.hqxqyly.remex.crude.sequence.entity.SequenceEntity;
  * @author Qiaoxin.Hong
  *
  */
+//@FeignClient(name = "${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}"
+//	, contextId = "remex-crude-sequence-${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}")
 @FeignClient(name = "${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}"
-	, contextId = "remex-crude-sequence-${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}")
+	, contextId = "com.github.hqxqyly.remex.crude.sequence.feign.SequenceFeign")
 public interface SequenceFeign extends SequenceApi<SequenceEntity> {
 
 }

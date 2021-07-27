@@ -21,6 +21,22 @@
 		</dependency>
 		
 		<dependency>
+	  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
+	  		<artifactId>remex-cloud-zuul</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
+	  		<artifactId>remex-cloud-gateway</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
+	  		<artifactId>remex-cloud-seata</artifactId>
+	  		<version>${project.version}</version>
+	  	</dependency>
+		
+		<dependency>
 		    <groupId>com.github.hqxqyly.remex.cloud</groupId>
 		    <artifactId>remex-cloud-projects-eureka</artifactId>
 		    <version>${project.version}</version>
@@ -55,11 +71,6 @@
 		    <artifactId>remex-cloud-projects-gateway-nacos</artifactId>
 		    <version>${project.version}</version>
 		</dependency>
-		<dependency>
-	  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
-	  		<artifactId>remex-cloud-seata</artifactId>
-	  		<version>${project.version}</version>
-	  	</dependency>
   	</dependencies>
   </dependencyManagement>
 </project>

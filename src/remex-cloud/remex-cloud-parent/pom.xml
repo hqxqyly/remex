@@ -14,5 +14,6 @@
   <modules>
     <module>remex-cloud-seata</module>
     <module>remex-cloud-zuul</module>
+    <module>remex-cloud-gateway</module>
   </modules>
 </project>

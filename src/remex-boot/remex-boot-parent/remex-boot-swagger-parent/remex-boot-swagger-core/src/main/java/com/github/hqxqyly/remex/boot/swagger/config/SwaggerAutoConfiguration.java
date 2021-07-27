@@ -1,6 +1,7 @@
 package com.github.hqxqyly.remex.boot.swagger.config;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -8,8 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
-import com.google.common.base.Predicate;
 import com.github.hqxqyly.remex.boot.constant.BConst;
 import com.github.hqxqyly.remex.boot.swagger.properties.SwaggerProperties;
 import com.github.hqxqyly.remex.boot.utils.Assist;
@@ -31,7 +30,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @author Qiaoxin.Hong
  *
  */
-@EnableSwaggerBootstrapUI
 @EnableSwagger2
 @Configuration
 public class SwaggerAutoConfiguration {

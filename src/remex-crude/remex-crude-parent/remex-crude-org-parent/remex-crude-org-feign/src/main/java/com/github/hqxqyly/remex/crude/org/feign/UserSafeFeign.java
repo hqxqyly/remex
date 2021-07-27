@@ -12,7 +12,7 @@ import com.github.hqxqyly.remex.crude.org.entity.UserSafeEntity;
  *
  */
 @FeignClient(name = "${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}"
-	, contextId = "remex-crude-org-${remexProjectName:Please configure the properties remexProjectName}${remexOrgProjectName:-org-service}")
+	, contextId = "com.github.hqxqyly.remex.crude.org.feign.UserSafeFeign")
 public interface UserSafeFeign extends UserSafeApi<UserSafeEntity> {
-
+	
 }

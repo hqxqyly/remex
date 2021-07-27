@@ -17,6 +17,7 @@ import com.github.hqxqyly.remex.boot.exception.RemexException;
 import com.github.hqxqyly.remex.boot.swagger.annotations.ApiModelPropertyHidden;
 
 import io.swagger.annotations.ApiModelProperty;
+import springfox.documentation.schema.property.ModelSpecificationFactory;
 import springfox.documentation.spi.schema.contexts.ModelPropertyContext;
 import springfox.documentation.spring.web.DescriptionResolver;
 import springfox.documentation.swagger.schema.ApiModelPropertyPropertyBuilder;
@@ -33,8 +34,9 @@ import springfox.documentation.swagger.schema.ApiModelPropertyPropertyBuilder;
 @Configuration
 public class RemexApiModelPropertyPropertyBuilder extends ApiModelPropertyPropertyBuilder {
 
-	public RemexApiModelPropertyPropertyBuilder(DescriptionResolver descriptions) {
-		super(descriptions);
+	public RemexApiModelPropertyPropertyBuilder(DescriptionResolver descriptions,
+			ModelSpecificationFactory modelSpecifications) {
+		super(descriptions, modelSpecifications);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
@@ -99,7 +101,7 @@ public class RemexApiModelPropertyPropertyBuilder extends ApiModelPropertyProper
 				}
 			}
 			
-			super.apply(context);
+//			super.apply(context);
 		} catch (Exception e) {
 			throw new RemexException("ApiModelPropertyPropertyBuilder apply error", e);
 		}

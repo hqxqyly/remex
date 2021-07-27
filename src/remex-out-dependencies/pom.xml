@@ -49,7 +49,7 @@
 		    <artifactId>redisson-spring-boot-starter</artifactId>
 		    <version>3.13.6</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
         	<groupId>io.swagger</groupId>
       		<artifactId>swagger-annotations</artifactId>
       		<version>1.5.20</version>
@@ -73,7 +73,7 @@
 		    <groupId>com.github.xiaoymin</groupId>
 		    <artifactId>swagger-bootstrap-ui</artifactId>
 		    <version>1.9.6</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 		    <groupId>com.alibaba</groupId>
 		    <artifactId>fastjson</artifactId>

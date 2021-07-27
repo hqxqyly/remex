@@ -12,9 +12,10 @@
   
   <dependencies>
   	<dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-    </dependency>
+  		<groupId>com.github.hqxqyly.remex.cloud</groupId>
+  		<artifactId>remex-cloud-zuul</artifactId>
+  	</dependency>
+  	
   	<dependency>
 	    <groupId>com.alibaba.cloud</groupId>
 	    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
